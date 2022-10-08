@@ -1,0 +1,32 @@
+.sprint {
+  &__timer {
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    #svg1 {
+      width: 120px;
+      height: 120px;
+      fill: #f8e805;
+      stroke-width: 0px;
+      border-radius: 50%;
+      stroke: #f8e805;
+      box-shadow: 0px 0px 60px #f8e805;
+    }
+    .out {
+      fill: rgba($color: rgb(255 183 49), $alpha: 1);
+      stroke: #f8e805;
+      &.red {
+        stroke: rgb(255, 185, 138);
+      }
+    }
+  }
+  &__time {
+    @include font($xlarge);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 1px 5px black;
+  }
+}

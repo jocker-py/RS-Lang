@@ -1,1 +1,1 @@
-# RS-Lang
+rss-lang

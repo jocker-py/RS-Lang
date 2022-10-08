@@ -1,0 +1,24 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+@import './base//normalize';
+@import 'base/typoghraphy';
+@import 'base/base';
+
+@import 'components/authorization';
+
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+@import 'layout/forms';
+
+
+@import '../components/pages/Home/home';
+@import '../components/pages/Dictionary/dictionary';
+@import '../components/pages/Games/AudioCall/audiocall';
+@import '../components/pages/Games/Sprint/sprint';
+@import '../components/pages/Stats/stats';
+
+@import '../components/pages/Dictionary/preloader/preloader';
+@import '../components/pages/Dictionary/dictionary';

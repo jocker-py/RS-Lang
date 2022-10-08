@@ -1,0 +1,31 @@
+// Миксины
+
+@mixin flex($dir: row, $a: center, $j: center, $w: nowrap) {
+    display: flex;
+    flex-wrap: $w;
+    flex-direction: $dir;
+    align-items: $a;
+    justify-content: $j;
+}
+
+@mixin font ($s: $small, $p:center){
+    font-size: $s;
+    line-height: $s;
+    text-align: $p;
+}
+
+@mixin back ($url, $w: 30px, $h: 30px){
+    width: $w;
+    height: $h;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url($url);
+}
+// Пример использования:
+// body {
+//     @include flex; - все стили по-умолчанию
+//     @include flex(column) - flex-direction: column;
+//     @include flex($a: flex-start) - align-items: flex-start, остальные по-умолчанию;
+//     @include flex(column, flex-start, flex-end, wrap) - переопределение каждой настройкиж
+// }
