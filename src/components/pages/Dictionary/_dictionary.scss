@@ -1,0 +1,137 @@
+// Страница Электронный учебник
+
+.dictionary-container {
+  .cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .card {
+      width: 386px;
+      height: 700px;
+      margin: 15px;
+      padding: 20px;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      border-radius: 30px;
+      box-shadow: 20px 20px 17px rgba(0, 0, 0, 0.206);
+      .battons-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+
+        .word-button {
+          background-color: rgba(106, 112, 112, 0.129);
+          border: 1px solid rgba(0, 0, 0, 0.083);
+          padding: 15px;
+          cursor: pointer;
+        }
+      }
+      .title-trans-sound {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .sound-card {
+          background-image: url('../assets/icons/sound.png');
+          background-size: 50px 50px;
+          background-repeat: no-repeat;
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+  .page-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .page-button-start {
+      background-image: url('../assets/icons/two-arrow-left.png');
+      width: 50px;
+      height: 50px;
+      background-size: cover;
+    }
+    .page-button-left {
+      background-image: url('../assets/icons/arrow-left.png');
+      width: 50px;
+      height: 50px;
+      background-size: cover;
+    }
+    .page-button-right {
+      background-image: url('../assets/icons/arrow-right.png');
+      width: 50px;
+      height: 50px;
+      background-size: cover;
+    }
+    .page-button-end {
+      background-image: url('../assets/icons/two-arrow-right.png');
+      width: 50px;
+      height: 50px;
+      background-size: cover;
+    }
+  }
+  .group-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .group-button {
+      border-radius: 30px;
+      background-color: rgb(110, 109, 104);
+      color: rgb(254, 229, 60);
+      border: solid 1px black;
+      width: max-content;
+      padding: 7px;
+      margin: 5px;
+    }
+  }
+}
+
+.disabled-group {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.disabled-page {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.learned-words-button {
+  color: rgb(4, 39, 20) !important;
+  background-color: rgb(34, 150, 61) !important;
+  border: 1px solid rgb(9, 59, 9) !important;
+  padding: 15px;
+}
+.difficult-words-button {
+  background-color: red !important;
+}
+
+.difficult-word-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.selected-page {
+  background-color: green !important ;
+}
+.img-logo {
+  color: black;
+  text-decoration: none;
+  text-underline-offset: none;
+}
+
+.games-container {
+  // width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  div {
+    font-size: 20px;
+  }
+}

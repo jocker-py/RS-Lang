@@ -1,0 +1,30 @@
+.sprint {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include flex(column, $j: flex-start);
+  background-image: url('../assets/clouds_sprint.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 20px;
+  &__header {
+    padding-top: 40px;
+    @include flex($j: space-around);
+    height: 10vh;
+    width: 100%;
+  }
+  &__sound {
+    @include back('../assets/icons/soundOff.png');
+    &.active {
+      @include back('../assets/icons/soundOn.png');
+    }
+  }
+  &__exit {
+    @include back('../assets/icons/close.png');
+  }
+  &__points {
+    @include font($xlarge);
+  }
+}

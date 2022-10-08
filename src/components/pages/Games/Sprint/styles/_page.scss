@@ -1,0 +1,71 @@
+.page {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include flex(column);
+    gap: 20px;
+    background-color: transparent;
+    z-index: 0;
+    &__description {
+        @include flex(column);
+        background: transparent;
+        color: white;
+        width: 70%;
+        height: 30%;
+        gap: 20px;
+    }
+    &__title{
+        @include font($xlarge);
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    &__row {
+        @include font($large);
+        margin-left: 10px;
+        width: 100%; 
+    }
+    &__levels {
+        @include flex($j:space-evenly);
+        border-radius: $bradius;
+        width: 70%;
+    }
+    
+    &__level {
+        @include font($large);
+        @extend %border;
+        position: relative;
+        transform: translate(-2px, -2px);
+        padding: 20px;
+        transition: all 0.3s;
+        opacity: 0.8;
+        &:hover{
+            opacity: 1;
+            transform: translate(0, 0);
+            box-shadow: $wshadow;
+            cursor: pointer;
+            color: white;
+        }
+        &--0 {
+            background-color: $A1
+        }
+        &--1 {
+            background-color: $A2
+        }
+
+        &--2 {
+            background-color: $B1
+        }
+        &--3 {
+            background-color: $B2
+        }
+
+        &--4 {
+            background-color: $C1
+        }
+        &--5 {
+            background-color: $C2
+        }
+    }  
+}

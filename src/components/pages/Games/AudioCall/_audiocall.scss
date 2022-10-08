@@ -1,0 +1,270 @@
+// Стриница Игра-Аудиовызов
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: block;
+  background-image: url('../assets/clouds_audiocall.svg');
+  background-size: cover;
+}
+
+.wrapper_audiocall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: $bshadow;
+}
+
+.wrapper_box {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    @include font($xlarge);
+  }
+  h3 {
+    @include font($large);
+  }
+}
+
+.additional_btns {
+  display: flex;
+  position: fixed;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  margin-left: auto;
+  padding: 20px 20px 0 0;
+  margin: 0;
+  right: 30px;
+  top: 120px;
+}
+
+.audiocall_exit {
+  background-image: url('../assets/icons/close.png');
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.sound {
+  background-image: url('../assets/icons/soundOn.png');
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
+
+.sound[active] {
+  background-image: url('../assets/icons/soundOff.png');
+}
+
+.word_btns {
+  flex-direction: row;
+  margin: 0 0 20px 0;
+}
+
+.word_btn {
+  margin: 5px;
+  border: none;
+  border-radius: 15px;
+  padding: 3px 6px;
+  background-color: hsl(250deg 100% 96%);
+}
+
+.unknown_btn,
+.next_btn {
+  font-size: 22px;
+  border-radius: 15px;
+  border: 1px solid hsl(206deg 100% 73%);
+  background-color: hsl(240deg 83% 66% / 5%);
+  padding: 3px 6px;
+}
+
+.voiceBox {
+  background-image: url('../assets/icons/soundOn.png');
+  height: 64px;
+  width: 64px;
+  border: none;
+  background-color: transparent;
+  margin: 30px 0 0 0;
+  padding: 0;
+}
+
+.voiceBox:active {
+  transform: scale(1.1);
+}
+
+.rightAnswer {
+  background-color: hsl(206deg 100% 73%);
+  font-weight: bold;
+  color: black;
+}
+
+.falseAnswer {
+  background-color: hsl(240deg 7% 62%);
+}
+
+.image {
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px 5px rgb(0 0 0 / 25%);
+}
+
+.wordInEnglish {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.stat_table {
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 15px;
+  background-color: #a8cef4;
+  min-width: 320px;
+  border: 2px solid rgb(54, 144, 196);
+}
+
+.word_wrapper {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.word_sound {
+  font-size: 24px;
+  margin-right: 10px;
+  background-image: url('../assets/icons/sound.png');
+  background-size: contain;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.word_header {
+  margin: 10px 0;
+}
+
+.go_home {
+  margin-top: 30px;
+  border: 1px solid hsl(206deg 100% 73%);
+  background-color: hsl(232deg 84% 90%);
+  border-radius: 25px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.level_btns {
+  @include flex($j: space-evenly);
+  border-radius: $bradius;
+  width: 70%;
+}
+
+.level_btn {
+  // width: 36px;
+  // height: 36px;
+  // border-radius: 50%;
+  // margin: 5px;
+  // border: 2px solid hsl(206deg 100% 10%);
+  // font-weight: bold;
+  @include font($large);
+  border: none;
+  @extend %border;
+  position: relative;
+  transform: translate(-2px, -2px);
+  padding: 20px;
+  transition: all 0.3s;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    transform: translate(0, 0);
+    box-shadow: $wshadow;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.level_btn:focus {
+  transform: scale(1.2);
+  opacity: 1;
+  transform: translate(0, 0);
+  box-shadow: $wshadow;
+}
+
+.start_btn:hover {
+  background-color: rgb(83 167 255);
+}
+
+.level_btn[data-key='0'] {
+  background-color: rgb(0 255 213 / 80%);
+}
+
+.level_btn[data-key='1'] {
+  background-color: rgb(60 232 122 / 80%);
+}
+
+.level_btn[data-key='2'] {
+  background-color: rgb(252 255 57 / 80%);
+}
+
+.level_btn[data-key='3'] {
+  background-color: rgb(255 169 0 / 80%);
+}
+
+.level_btn[data-key='4'] {
+  background-color: rgb(255 107 107 / 80%);
+}
+
+.level_btn[data-key='5'] {
+  background-color: rgb(255 0 0 / 80%);
+}
+
+.start_btn {
+  // padding: 5px;
+  // margin-top: 15px;
+  // border: 1px solid hsl(206deg 100% 73%);
+  //background-color: hsl(232deg 84% 90%);
+  // border-radius: 16px;
+  // font-weight: bold;
+  // font-size: 20px;
+  margin-top: 30px;
+  @include font($large);
+  @extend %border;
+  border: none;
+  position: relative;
+  transform: translate(-2px, -2px);
+  padding: 20px;
+  transition: all 0.3s;
+  opacity: 0.8;
+  background-color: hsl(232deg 84% 90%);
+  &:hover {
+    opacity: 1;
+    transform: translate(0, 0);
+    box-shadow: $wshadow;
+    cursor: pointer;
+  }
+}
+
+.title_complexity {
+  margin: 20px 0 35px;
+  @include font($small);
+}

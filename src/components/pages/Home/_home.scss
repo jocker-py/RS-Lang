@@ -1,0 +1,221 @@
+// Главная страница
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+.home-container {
+  overflow-x: hidden;
+  @include back('../assets/clouds_main.svg', 100vw, 100vh);
+  .header {
+    position: relative;
+    z-index: 999;
+    height: 5%;
+    font-family: 'Kurale', serif;
+    @include flex($j:space-around);
+    h1,
+    div {
+      cursor: pointer;
+    }
+    .header-batton {
+      font-size: 1.5em;
+      padding: 5px;
+      transition: all 0.3s;
+      border-radius: 5px;
+      &:hover {
+        box-shadow: $bshadow;
+        background-color: white;
+        opacity: 0.8;
+      }
+    }
+    .main-title {
+      // font-size: 2em;
+      @include font($large);
+      font-family: 'Macondo Swash Caps', cursive;
+    }
+  }
+  .footer {
+    font-family: 'Kurale', serif;
+    height: 40px;
+    background-color: rgb(141, 188, 242);
+  }
+  .main {
+    height: 84%;
+    font-family: 'Kurale', serif;
+    .sky-lang-inf-conteiner {
+      margin-top: 70px;
+      width: 100%;
+      height: 1px;
+      min-height: 200px;
+      @include flex(column, $j: stretch);
+      .sky-lang-title {
+        margin-bottom: 50px;
+        @include font($xxlarge);
+        text-shadow: 1px 1px 5px black;
+        font-family: 'Macondo Swash Caps', cursive;
+        color: rgb(236, 199, 34);
+      }
+      .sky-lang-text {
+        font-size: 1.5em;
+        text-align: center;
+      }
+      .list-of-qualities {
+        display: flex;
+        flex-direction: column;
+        margin-top: 150px;
+        p {
+          font-size: 1.5em;
+        }
+
+        .first-quality {
+          @include flex($j:stretch);
+          .first-quality-image {
+            @include back('../assets/icons/sun.png');
+            margin-right: 10px;
+          }
+        }
+        .second-quality {
+          @include flex($j:stretch);
+          .second-quality-image {
+            @include back('../assets/icons/sun.png');
+            margin-right: 10px;
+          }
+        }
+        .third-quality {
+          @include flex($j:stretch);
+          .third-quality-image {
+            @include back('../assets/icons/sun.png');
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    .about-us {
+      @include flex(column);
+      margin-bottom: 100px;
+      .title-about-us {
+        margin-top: 250px;
+        font-size: 2em;
+      }
+      .about-us-container {
+        @include flex($j:space-around);
+        flex-wrap: wrap;
+        row-gap: 30px;
+        width: 100%;
+        height: 150px;
+        margin-top: 70px;
+
+        .valeryia-container {
+          display: flex;
+          .name-and-text-val {
+            @include flex(column, $j:space-around);
+            font-size: 1.5em;
+            .task-list {
+              list-style: disc;
+            }
+          }
+          .valNameAndText {
+            @include flex(column, stretch, stretch);
+          }
+          .valeryia-photo {
+            @include back('../assets/photo/lera.jpeg', 150px, 150px);
+            border-radius: 50%;
+            box-shadow: $bshadow;
+          }
+        }
+        .alex-container {
+          display: flex;
+          .name-and-text-al {
+            @include flex(column, $j:space-around);
+            font-size: 1.5em;
+            .task-list {
+              list-style: disc;
+            }
+          }
+          .alexNameAndText {
+            display: flex;
+            flex-direction: column;
+          }
+          .alex-photo {
+            @include back('../assets/photo/alex.jpg', 150px, 150px);
+            border-radius: 50%;
+            box-shadow: $bshadow;
+          }
+        }
+        .vlad-container {
+          display: flex;
+          .name-and-text-vl {
+            @include flex(column, $j:space-around);
+            font-size: 1.5em;
+            .task-list {
+              list-style: disc;
+            }
+          }
+          .vlad-photo {
+            @include back('../assets/photo/vlad.jpg', 150px, 150px);
+            border-radius: 50%;
+            box-shadow: $bshadow;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    @include flex($j:space-around);
+    font-size: 1.5em;
+    background-color: transparent;
+    &__git{
+      &--val{
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: $bshadow;
+        @include back('../assets/photo/lera.jpeg');
+        &:hover {
+          cursor: pointer;
+          box-shadow: $yshadow;
+        }
+      }
+      &--vlad{
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: $bshadow;
+        @include back('../assets/photo/vlad.jpg');
+        &:hover {
+          cursor: pointer;
+          box-shadow: $yshadow;
+        }
+      }
+      &--alex{
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: $bshadow;
+        @include back('../assets/photo/alex.jpg');
+        &:hover {
+          cursor: pointer;
+          box-shadow: $yshadow;
+        }
+      }
+    }
+  }
+
+  .img-logo {
+    @include back('../assets/icons/rs.png');
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+  a {
+    transition: all 0.3s;
+    text-decoration: none;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+ 

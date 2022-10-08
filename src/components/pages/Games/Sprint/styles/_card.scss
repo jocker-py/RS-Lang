@@ -1,0 +1,185 @@
+.card {
+  position: relative;
+  @include flex(column, $j: flex-start);
+  @extend %border;
+  min-width: 40%;
+  max-width: 60%;
+  min-height: 350px;
+  border-radius: $bradius;
+  overflow-y: auto;
+  overflow-x: hidden;
+  gap: 20px;
+  transition: all 0.5s;
+  background-color: rgba(246, 246, 246, 0.5);
+  &.right {
+    box-shadow: $rightShadow;
+  }
+  &.wrong {
+    box-shadow: $wrongShadow;
+  }
+  &__header {
+    @include flex(column);
+    width: 100%;
+    min-height: 50px;
+    padding: 10px;
+    gap: 10px;
+    border-radius: $bradius $bradius 0 0;
+    &.state__0 {
+      background-color: blanchedalmond;
+    }
+    &.state__1 {
+      background-color: green;
+    }
+    &.state__2 {
+      background-color: rebeccapurple;
+    }
+    &.state__3 {
+      background-color: firebrick;
+    }
+  }
+  &__image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    &.state__0 {
+      background-image: url('../assets/img/1.png');
+    }
+    &.state__1 {
+      background-image: url('../assets/img/2.png');
+    }
+    &.state__2 {
+      background-image: url('../assets/img/3.png');
+    }
+    &.state__3 {
+      background-image: url('../assets/img/4.png');
+    }
+  }
+  &__rounds {
+    @include flex;
+    gap: 5px;
+  }
+  &__round {
+    border-radius: 50%;
+    @include back('../assets/icons/round.png');
+    &.active {
+      @include back('../assets/icons/mark.png');
+    }
+  }
+  &__list {
+    @include flex($j: flex-start);
+    width: 100%;
+  }
+  &__item {
+    @include flex(column, $j: space-between);
+    width: 100%;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  &__title {
+    @include font($large);
+  }
+  &__audio,
+  &__voice {
+    @include back('../assets/icons/voiceOff.png', 50px, 50px);
+    &.active {
+      @include back('../assets/icons/voiceOn.png', 50px, 50px);
+    }
+  }
+  &__buttons {
+    @include flex;
+    width: 100%;
+    gap: 10px;
+  }
+  &__button {
+    @include font(1.6rem);
+    @extend %border;
+    border-radius: $bradius;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 45px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    border: none;
+    @media  (max-width:720px) {
+      @include font(1rem);
+    }
+  }
+  &__false {
+    background-color: #ff445c;
+  }
+  &__true {
+    background-color: #44ff92;
+  }
+  &__ru,
+  &__eng,
+  &__image {
+    @include font($large);
+  }
+  &__stat {
+    @include flex;
+    flex-wrap: wrap;
+    width: 70%;
+    padding: 10px;
+    .card__item {
+      @include flex;
+      width: 100%;
+    }
+    .card__eng,
+    .card__ru {
+      width: 40%;
+    }
+    .card__audio,
+    .card__voice {
+      height: $large;
+      width: $large;
+    }
+  }
+  .wrapper {
+    transition: all 0.7s;
+    position: relative;
+    left: 0;
+    width: 100%;
+    border-radius: $bradius;
+    @include font;
+    @include flex(row, flex-start, flex-start);
+  }
+  &__positive,
+  &__negative {
+    @include flex(column, center, flex-start);
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+  }
+  &__count--right,
+  &__count--fail {
+    @include font;
+    width: 50%;
+    background-color: #44ff92;
+    padding: 4px;
+    border-radius: 5px;
+  }
+  &__count--fail {
+    background-color: #ff445c;
+  }
+  &__table {
+    @include font($small);
+    transition: all 0.3s;
+    box-shadow: none;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 20px 20px 0 0;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    padding: 12px 45px;
+    text-transform: uppercase;
+    &.active {
+      color: black;
+      background-color: transparent;
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
